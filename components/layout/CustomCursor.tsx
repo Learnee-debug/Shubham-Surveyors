@@ -71,6 +71,7 @@ export default function CustomCursor() {
   return (
     <>
       <div
+        id="cursor-dot"
         ref={dotRef}
         className="fixed top-0 left-0 z-[9999] pointer-events-none"
         style={{
@@ -82,6 +83,7 @@ export default function CustomCursor() {
         }}
       />
       <div
+        id="cursor-ring"
         ref={ringRef}
         className="fixed top-0 left-0 z-[9999] pointer-events-none"
         style={{
