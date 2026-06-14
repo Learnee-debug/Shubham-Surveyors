@@ -72,6 +72,9 @@
 /* ─── Base ─── */
 *, *::before, *::after {
   cursor: none;
+}
+
+:not(#cursor-dot):not(#cursor-ring) {
   border-radius: 0 !important;
 }
 
