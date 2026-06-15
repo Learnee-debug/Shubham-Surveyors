@@ -47,8 +47,8 @@ export default function GroundTruth() {
 
         {/* Right content */}
         <div
-          className="col-span-12 md:col-span-9"
-          style={{ borderLeft: '1px solid var(--color-brand-slate)', paddingLeft: 'clamp(1.5rem, 4vw, 4rem)' }}
+          className="col-span-12 md:col-span-9 md:border-l"
+          style={{ borderColor: 'var(--color-brand-slate)', paddingLeft: 'clamp(0rem, 4vw, 4rem)' }}
         >
           <RevealOnScroll delay={0.1}>
             <h2

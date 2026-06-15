@@ -70,18 +70,35 @@
 }
 
 /* ─── Base ─── */
-*, *::before, *::after {
-  cursor: none;
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-jost);
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, p {
+  overflow-wrap: break-word;
+}
+
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none;
+  }
 }
 
 :not(#cursor-dot):not(#cursor-ring) {
   border-radius: 0 !important;
-}
-
-body {
-  background-color: var(--color-surface);
-  color: var(--color-on-surface);
-  font-family: var(--font-jost);
 }
 
 h1, h2, h3, h4 {

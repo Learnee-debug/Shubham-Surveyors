@@ -149,8 +149,8 @@ export default function Hero() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease }}
-          className="col-span-12 md:col-span-4 flex flex-col gap-0"
-          style={{ borderLeft: '1px solid var(--color-brand-slate)', paddingLeft: '2rem' }}
+          className="col-span-12 md:col-span-4 flex flex-col gap-0 md:border-l md:pl-8 pt-8 md:pt-0"
+          style={{ borderColor: 'var(--color-brand-slate)' }}
         >
           {[
             { target: 30, suffix: '+', label: 'YEARS ACTIVE' },
