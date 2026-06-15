@@ -19,21 +19,24 @@ export async function POST(req: NextRequest) {
     const isQuote = email === 'via-quote-form@noreply.com'
     const resend = new Resend(apiKey)
     await resend.emails.send({
-      from: 'noreply@shubhamsurveyors.in',
+      from: 'Shubham Surveyors <onboarding@resend.dev>',
       to: process.env.CONTACT_EMAIL ?? 'shubhamsurveyors12@gmail.com',
+      replyTo: isQuote ? undefined : email,
       subject: isQuote
         ? `New Quote Request: ${service ?? 'Survey'} — ${name}`
         : `New Enquiry: ${service ?? 'General'} — ${name}`,
       html: `
-        <h2>${isQuote ? 'New Quote Request (from Cost Estimator)' : 'New Survey Enquiry'}</h2>
-        <table cellpadding="6" style="border-collapse:collapse;">
-          <tr><td><strong>Name:</strong></td><td>${name}</td></tr>
-          <tr><td><strong>Phone:</strong></td><td>${phone}</td></tr>
-          ${!isQuote ? `<tr><td><strong>Email:</strong></td><td>${email}</td></tr>` : ''}
-          <tr><td><strong>Service:</strong></td><td>${service ?? 'Not specified'}</td></tr>
-          ${state ? `<tr><td><strong>State:</strong></td><td>${state}</td></tr>` : ''}
-          <tr><td><strong>Details:</strong></td><td style="white-space:pre-line">${projectDetails}</td></tr>
-        </table>
+        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:24px;">
+          <h2 style="margin-bottom:16px;">${isQuote ? '📋 New Quote Request' : '📬 New Contact Enquiry'}</h2>
+          <table cellpadding="8" style="border-collapse:collapse;width:100%;">
+            <tr style="border-bottom:1px solid #eee;"><td style="color:#666;width:140px;"><strong>Name</strong></td><td>${name}</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="color:#666;"><strong>Phone</strong></td><td>${phone}</td></tr>
+            ${!isQuote ? `<tr style="border-bottom:1px solid #eee;"><td style="color:#666;"><strong>Email</strong></td><td>${email}</td></tr>` : ''}
+            <tr style="border-bottom:1px solid #eee;"><td style="color:#666;"><strong>Service</strong></td><td>${service ?? 'Not specified'}</td></tr>
+            ${state ? `<tr style="border-bottom:1px solid #eee;"><td style="color:#666;"><strong>State</strong></td><td>${state}</td></tr>` : ''}
+            <tr><td style="color:#666;vertical-align:top;"><strong>Details</strong></td><td style="white-space:pre-line">${projectDetails}</td></tr>
+          </table>
+        </div>
       `,
     })
 
