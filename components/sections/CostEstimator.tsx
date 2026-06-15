@@ -42,13 +42,28 @@ export default function CostEstimator() {
   const isKm = surveyType === 'highway'
   const areaLabel = isKm ? 'LENGTH (KM)' : 'AREA (ACRES)'
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     const pricing = PRICING[data.surveyType as SurveyType]
     if (!pricing) return
     const multiplier = TERRAIN_MULTIPLIERS[data.terrain as TerrainType]?.value ?? 1
     const est = calculateEstimate(data.surveyType as SurveyType, data.area, multiplier)
     setResult(est)
     setCalcData(data)
+
+    // Notify owner by email
+    const isKmType = data.surveyType === 'highway'
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: data.name,
+        phone: data.phone,
+        email: 'via-quote-form@noreply.com',
+        service: pricing.label,
+        state: '',
+        projectDetails: `Quote request — ${pricing.label}\nArea/Length: ${data.area} ${isKmType ? 'km' : 'acres'}\nTerrain: ${data.terrain}\nEstimated range: ₹${est.min.toLocaleString('en-IN')} – ₹${est.max.toLocaleString('en-IN')} per ${est.unit}`,
+      }),
+    }).catch(() => {/* fire-and-forget */})
   }
 
   const waMsg = calcData && result
