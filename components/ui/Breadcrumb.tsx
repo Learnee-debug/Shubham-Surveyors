@@ -34,7 +34,7 @@ export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
           padding: '1rem clamp(1rem, 4vw, 4rem)',
           borderBottom: '1px solid var(--color-outline-variant)',
           backgroundColor: 'var(--color-surface)',
-          marginTop: '6.1rem',
+          marginTop: 'var(--header-height, 97px)',
         }}
       >
         {allItems.map((item, i) => (

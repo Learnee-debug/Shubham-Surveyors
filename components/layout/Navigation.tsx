@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { NAV_LINKS, SITE } from '@/lib/constants'
 import { Menu, X, Phone, Mail } from 'lucide-react'
@@ -11,6 +11,7 @@ export default function Navigation() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -22,9 +23,22 @@ export default function Navigation() {
     setMobileOpen(false)
   }, [pathname])
 
+  useEffect(() => {
+    const header = headerRef.current
+    if (!header) return
+    const setHeight = () => {
+      document.documentElement.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`)
+    }
+    setHeight()
+    const observer = new ResizeObserver(setHeight)
+    observer.observe(header)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <>
       <header
+        ref={headerRef}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
           backgroundColor: 'var(--color-surface)',
@@ -35,7 +49,7 @@ export default function Navigation() {
       >
         {/* Contact strip */}
         <div
-          className="flex items-center justify-center md:justify-end gap-4 md:gap-6 px-8 py-1.5"
+          className="flex items-center justify-center md:justify-end flex-wrap gap-x-4 gap-y-1 md:gap-x-6 px-8 py-1.5"
           style={{
             backgroundColor: 'var(--color-brand-navy)',
             paddingLeft: 'clamp(1rem, 4vw, 4rem)',
@@ -44,26 +58,26 @@ export default function Navigation() {
         >
           <a
             href={`tel:${SITE.phone.replace(/\s/g, '')}`}
-            className="flex items-center gap-2 label-caps transition-opacity duration-200 hover:opacity-80"
+            className="flex items-center gap-1.5 label-caps transition-opacity duration-200 hover:opacity-80"
             style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
           >
-            <Phone size={12} />
+            <Phone size={12} className="flex-shrink-0" />
             {SITE.phone}
           </a>
           <a
             href={`tel:${SITE.phoneAlt.replace(/\s/g, '')}`}
-            className="hidden sm:flex items-center gap-2 label-caps transition-opacity duration-200 hover:opacity-80"
+            className="hidden sm:flex items-center gap-1.5 label-caps transition-opacity duration-200 hover:opacity-80"
             style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
           >
-            <Phone size={12} />
+            <Phone size={12} className="flex-shrink-0" />
             {SITE.phoneAlt}
           </a>
           <a
             href={`mailto:${SITE.email}`}
-            className="hidden md:flex items-center gap-2 label-caps transition-opacity duration-200 hover:opacity-80"
+            className="flex items-center gap-1.5 label-caps transition-opacity duration-200 hover:opacity-80"
             style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
           >
-            <Mail size={12} />
+            <Mail size={12} className="flex-shrink-0" />
             {SITE.email}
           </a>
         </div>
@@ -178,8 +192,9 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-[97px] left-0 right-0 z-40 flex flex-col"
+            className="fixed left-0 right-0 z-40 flex flex-col"
             style={{
+              top: 'var(--header-height, 97px)',
               backgroundColor: 'var(--color-surface)',
               borderBottom: '1px solid var(--color-outline)',
             }}

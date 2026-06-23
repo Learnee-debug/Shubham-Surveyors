@@ -40,14 +40,13 @@ export default function LocationPageTemplate({ location, index }: LocationPageTe
           <h1
             style={{
               fontFamily: 'var(--font-syne)',
-              fontSize: 'clamp(2rem, 5.5vw, 3.5rem)',
+              fontSize: 'clamp(1.6rem, 5.5vw, 3.5rem)',
               fontWeight: '800',
               textTransform: 'uppercase',
               letterSpacing: '-0.02em',
               color: 'var(--color-brand-offwhite)',
               maxWidth: '950px',
-              overflowWrap: 'normal',
-              wordBreak: 'normal',
+              overflowWrap: 'break-word',
               marginBottom: '1.5rem',
             }}
           >
