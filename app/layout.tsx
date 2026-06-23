@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Syne, Jost, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
@@ -7,6 +7,7 @@ import CustomCursor from '@/components/layout/CustomCursor'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import Script from 'next/script'
 import { SITE } from '@/lib/constants'
+import { LOCATIONS } from '@/lib/locations'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -30,48 +31,106 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 })
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'Shubham Surveyors — Land Surveyors in Pune, Maharashtra | India',
-    template: '%s | Shubham Surveyors',
+    default: 'Land Surveyor India | DGPS & Total Station Surveys | Shubham Surveyors',
+    template: '%s | Shubham Surveyors — Land Surveying India',
   },
   description:
-    "Shubham Surveyors — trusted land surveyors in Pune since 1994. DGPS, Total Station, AutoCAD. Government certified. RERA compliant. All India coverage.",
+    "India's most trusted land surveying firm with 30+ years experience. DGPS surveys, Total Station, topographic surveys, RERA-compliant layouts. Government certified. Serving all India.",
   keywords: [
-    'land surveyors',
-    'land surveyors in Pune',
     'land surveyor India',
-    'DGPS survey',
-    'RTK survey',
-    'RERA surveyor',
-    'boundary survey Pune',
-    'topographic survey Maharashtra',
+    'DGPS survey India',
+    'total station survey',
+    'land survey company India',
+    'topographic survey India',
+    'boundary survey India',
+    'RERA survey',
+    'land surveyors in Pune',
+    'survey company Maharashtra',
+    'RTK DGPS survey',
+    'cadastral survey India',
+    'highway survey India',
+    'TILR Mojani Maharashtra',
+    'government land survey',
   ],
+  authors: [{ name: SITE.name }],
+  creator: SITE.name,
+  publisher: SITE.name,
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: SITE.url,
     siteName: SITE.name,
+    title: 'Land Surveyor India | DGPS & Total Station | Shubham Surveyors',
+    description: "India's most trusted precision land surveying firm. 30+ years. Government certified. All India coverage.",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Land Surveyor India | Shubham Surveyors',
+    description: "India's most trusted land surveying firm. 30+ years. DGPS, Total Station, AutoCAD.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
 }
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Shubham Surveyors',
-  description: 'Land surveyors based in Pune, Maharashtra, serving clients across India since 1994.',
+  '@id': `${SITE.url}/#organization`,
+  name: SITE.name,
+  description: 'Land surveyors based in Pune, Maharashtra, serving clients across India since 1994. DGPS, Total Station, AutoCAD. Government certified.',
   url: SITE.url,
   telephone: SITE.phone,
   email: SITE.email,
+  foundingDate: SITE.founded,
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Forest Castle, Ambegaon Budruk',
     addressLocality: 'Pune',
     addressRegion: 'Maharashtra',
     addressCountry: 'IN',
   },
-  areaServed: 'India',
-  foundingYear: '1994',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 18.5204,
+    longitude: 73.8567,
+  },
+  sameAs: SITE.sameAs,
+  areaServed: [
+    { '@type': 'Country', name: 'India' },
+    ...LOCATIONS.map((loc) => ({ '@type': 'State', name: loc.name })),
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Land Surveying Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Boundary & Land Survey', description: 'Precise boundary demarcation, RERA compliant, court admissible' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'RTK DGPS Survey', description: 'Sub-centimeter accuracy differential GPS surveys' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Topographic Survey', description: 'High-density elevation mapping for construction' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Highway Corridor Survey', description: 'NHAI and PWD standard highway alignment surveys' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'RERA Layout Survey', description: 'RERA compliant layout plans for real estate developers' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mojani & TILR Consultancy', description: 'Expert guidance on Maharashtra land revenue procedures' } },
+    ],
+  },
+  priceRange: '₹₹',
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -85,6 +144,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Script
+          id="breadcrumb-json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
         <CustomCursor />
         <Navigation />

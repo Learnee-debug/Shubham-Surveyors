@@ -3,6 +3,7 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import PrecisionCard from '@/components/ui/PrecisionCard'
 import { SERVICES } from '@/lib/constants'
+import { LOCATIONS } from '@/lib/locations'
 import { Mountain, Map, Satellite, Route, Scale, Globe, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 
@@ -139,6 +140,47 @@ export default function ServicesPage() {
               </div>
             </RevealOnScroll>
           ))}
+        </div>
+      </section>
+
+      {/* Available across India */}
+      <section
+        className="py-24"
+        style={{ backgroundColor: 'var(--color-surface)', paddingLeft: 'clamp(1rem, 4vw, 4rem)', paddingRight: 'clamp(1rem, 4vw, 4rem)' }}
+      >
+        <RevealOnScroll>
+          <SectionLabel index="§ 03" label="Coverage" />
+          <h2
+            style={{
+              fontFamily: 'var(--font-syne)',
+              fontSize: 'clamp(1.75rem, 4vw, 3rem)',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: 'var(--color-on-surface)',
+              marginBottom: '2rem',
+            }}
+          >
+            Available Across India
+          </h2>
+        </RevealOnScroll>
+        <div className="flex flex-wrap gap-3">
+          {LOCATIONS.slice(0, 10).map((loc) => (
+            <Link
+              key={loc.state}
+              href={`/locations/${loc.state}`}
+              className="label-caps px-4 py-2"
+              style={{ border: '1px solid var(--color-outline)', color: 'var(--color-on-surface-variant)' }}
+            >
+              {loc.name}
+            </Link>
+          ))}
+          <Link
+            href="/locations"
+            className="label-caps px-4 py-2"
+            style={{ border: '1px solid var(--color-brand-gold)', color: 'var(--color-brand-gold)' }}
+          >
+            View All States →
+          </Link>
         </div>
       </section>
 

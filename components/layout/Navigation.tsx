@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { NAV_LINKS, SITE } from '@/lib/constants'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone, Mail } from 'lucide-react'
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -33,6 +33,41 @@ export default function Navigation() {
             : '1px solid var(--color-outline)',
         }}
       >
+        {/* Contact strip */}
+        <div
+          className="flex items-center justify-center md:justify-end gap-4 md:gap-6 px-8 py-1.5"
+          style={{
+            backgroundColor: 'var(--color-brand-navy)',
+            paddingLeft: 'clamp(1rem, 4vw, 4rem)',
+            paddingRight: 'clamp(1rem, 4vw, 4rem)',
+          }}
+        >
+          <a
+            href={`tel:${SITE.phone.replace(/\s/g, '')}`}
+            className="flex items-center gap-2 label-caps transition-opacity duration-200 hover:opacity-80"
+            style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
+          >
+            <Phone size={12} />
+            {SITE.phone}
+          </a>
+          <a
+            href={`tel:${SITE.phoneAlt.replace(/\s/g, '')}`}
+            className="hidden sm:flex items-center gap-2 label-caps transition-opacity duration-200 hover:opacity-80"
+            style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
+          >
+            <Phone size={12} />
+            {SITE.phoneAlt}
+          </a>
+          <a
+            href={`mailto:${SITE.email}`}
+            className="hidden md:flex items-center gap-2 label-caps transition-opacity duration-200 hover:opacity-80"
+            style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
+          >
+            <Mail size={12} />
+            {SITE.email}
+          </a>
+        </div>
+
         <div
           className="flex items-center justify-between px-8 py-4"
           style={{ paddingLeft: 'clamp(1rem, 4vw, 4rem)', paddingRight: 'clamp(1rem, 4vw, 4rem)' }}
@@ -143,7 +178,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-[69px] left-0 right-0 z-40 flex flex-col"
+            className="fixed top-[97px] left-0 right-0 z-40 flex flex-col"
             style={{
               backgroundColor: 'var(--color-surface)',
               borderBottom: '1px solid var(--color-outline)',

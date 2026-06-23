@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 import { getArticleBySlug, getAllArticleSlugs } from '@/lib/sanity/queries'
+import { SITE } from '@/lib/constants'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -16,6 +18,8 @@ const fallbackArticles: Record<string, {
   publishedAt: string
   sections: Array<{ heading: string; content: string; callout?: { title: string; body: string; label?: string } }>
   sidebar?: { required?: string[]; timelines?: Array<{ label: string; value: string }>; related?: Array<{ title: string; href: string }> }
+  faqs?: Array<{ question: string; answer: string }>
+  howTo?: { name: string; steps: Array<{ name: string; text: string }> }
 }> = {
   'mojani-process': {
     title: 'The Mojani Process in Maharashtra: A Complete Technical Guide',
@@ -58,6 +62,22 @@ const fallbackArticles: Record<string, {
         { title: 'DGPS vs. Total Station in Modern Surveying', href: '/knowledge/tilr-guidelines' },
       ],
     },
+    faqs: [
+      { question: 'What is the Mojani process in Maharashtra?', answer: 'Mojani is the official land measurement process conducted by Maharashtra\'s Land Records Department (Bhumi Abhilekh) to determine, verify, or re-establish a land parcel\'s boundaries according to government records.' },
+      { question: 'How long does the Mojani process take?', answer: 'Timelines depend on urgency: roughly 6 months for an Ordinary application, 3 months for Urgent, and around 1 month for Tatkal (super urgent) requests.' },
+      { question: 'What documents are needed for Mojani?', answer: 'You need the latest 7/12 extract (original), the 8A extract, a copy of the village map (Gat map), and identity proof of the applicant. The application must be signed by all co-owners listed on the 7/12 extract.' },
+      { question: 'What is the fee for a Mojani survey?', answer: 'Fees are set by challan after the TILR office verifies your application, and vary based on the urgency level selected — Ordinary, Urgent, or Tatkal.' },
+      { question: 'Who conducts Mojani surveys in Maharashtra?', answer: 'A government surveyor assigned by the Taluka Inspector of Land Records (TILR) office conducts the physical measurement, often using Total Station or DGPS equipment to correlate boundaries with historical cadastral maps.' },
+    ],
+    howTo: {
+      name: 'How to complete the Mojani process in Maharashtra',
+      steps: [
+        { name: 'Submit Application', text: 'Submit a formal application to the Taluka Inspector of Land Records (TILR) office stating the purpose of measurement, signed by all co-owners listed on the 7/12 extract.' },
+        { name: 'TILR Verification & Fee Payment', text: 'The TILR office verifies your documents against master records and issues a challan for the measurement fee based on urgency.' },
+        { name: 'Field Survey', text: 'A government surveyor conducts the physical measurement using Total Station or DGPS, after issuing prior notice to adjacent landowners.' },
+        { name: 'Final Record Generation', text: 'The surveyor prepares a K-Pratap (Measurement Sheet) sanctioned by the TILR, establishing the legally recognized boundaries.' },
+      ],
+    },
   },
   'rera-requirements': {
     title: 'RERA Compliance & Precision Surveying',
@@ -91,6 +111,11 @@ const fallbackArticles: Record<string, {
         { title: 'UAV Drone Mapping Accuracy', href: '/knowledge/tilr-guidelines' },
       ],
     },
+    faqs: [
+      { question: 'What survey is required for RERA registration?', answer: 'RERA registration requires precision boundary demarcation and an accurate layout survey, typically using Total Station or DGPS, to confirm the project boundaries and carpet area match the registered plans.' },
+      { question: 'Is a topographic survey mandatory for RERA?', answer: 'While not always explicitly named "topographic," ground-based elevation and boundary data are required to certify layout plans and as-built dimensions for RERA compliance.' },
+      { question: 'Who can certify a RERA survey in Maharashtra?', answer: 'A licensed surveyor or registered architect typically certifies the as-built survey and area statements submitted with a RERA application, based on precision field measurements.' },
+    ],
   },
   'boundary-disputes': {
     title: 'How to Resolve a Land Boundary Dispute in India',
@@ -116,6 +141,11 @@ const fallbackArticles: Record<string, {
         content: 'If the private survey confirms a dispute, the formal resolution path requires applying to the Taluka Inspector of Land Records (TILR) for an official Mojani survey. The K-Pratap document generated from this survey carries statutory legal weight.',
       },
     ],
+    faqs: [
+      { question: 'How do I resolve a land boundary dispute in India?', answer: 'First determine whether it is a measurement dispute or a title dispute, gather your title documents and past survey reports, commission a private survey to establish the facts, then apply for an official government Mojani survey if the dispute persists.' },
+      { question: 'What is the legal process for a boundary dispute?', answer: 'The formal process runs through the Taluka Inspector of Land Records (TILR), who conducts or supervises an official Mojani survey. The resulting K-Pratap document carries statutory legal weight and can be used in court.' },
+      { question: 'Is a licensed surveyor required for court proceedings?', answer: 'Yes — court-admissible boundary evidence generally requires a government-sanctioned survey (Mojani) or a report from a licensed surveyor, since private measurements alone do not carry the same statutory weight.' },
+    ],
   },
   '712-extract': {
     title: '7/12 Extract: What It Is and How to Get It',
@@ -137,6 +167,12 @@ const fallbackArticles: Record<string, {
         content: 'For any survey work, the 7/12 extract serves as the primary reference document. It establishes the legal area of the parcel, the survey number, and the legal owners — all of which must match the physical survey findings for the report to be legally complete.',
       },
     ],
+    faqs: [
+      { question: 'What is the 7/12 extract in Maharashtra?', answer: 'The 7/12 extract (Satbara Utara) is the foundational land record for agricultural and revenue land in Maharashtra, combining Register 7 (survey number, ownership, cultivation rights) and Register 12 (mortgages and other encumbrances).' },
+      { question: 'How do I get a 7/12 extract online in Maharashtra?', answer: 'It can be obtained through Maharashtra\'s official land records portal (Bhulekh / Mahabhumi) by searching with the village name, survey number, or owner name.' },
+      { question: 'What information does the 7/12 extract contain?', answer: 'It lists the survey number and area, owner names with ownership share, cultivation type, land use, current possessor, outstanding liabilities, and any court orders affecting the land.' },
+      { question: 'Is the 7/12 extract required for land purchase?', answer: 'Yes — it is the primary document used to verify legal ownership, area, and encumbrances before any agricultural or revenue land purchase in Maharashtra.' },
+    ],
   },
   'tilr-guidelines': {
     title: 'TILR Guidelines Explained',
@@ -153,6 +189,10 @@ const fallbackArticles: Record<string, {
         heading: '§ 02 TILR Guidelines for Survey Work',
         content: 'Private surveyors working alongside government officials must adhere to TILR guidelines regarding: Survey methodology (Total Station or DGPS), Control point establishment, Boundary marker specifications, Report format and certification requirements.',
       },
+    ],
+    faqs: [
+      { question: 'Who is the TILR in Maharashtra?', answer: 'The Taluka Inspector of Land Records (TILR) is the government official responsible for maintaining land records and conducting or supervising official surveys (Mojani) at the taluka level.' },
+      { question: 'What do TILR guidelines cover for private surveyors?', answer: 'TILR guidelines govern survey methodology (Total Station or DGPS), control point establishment, boundary marker specifications, and report format and certification requirements for any survey work tied to official land records.' },
     ],
   },
   'zone-certificate': {
@@ -175,6 +215,11 @@ const fallbackArticles: Record<string, {
         content: 'Zone Certificate: Required before any development permission application, for change of land use applications, for obtaining building permits. Property Card: Required for property registration, bank loans, encumbrance searches, and any survey work on urban non-agricultural land.',
       },
     ],
+    faqs: [
+      { question: 'What is a Zone Certificate in Maharashtra?', answer: 'A Zone Certificate is issued by the local planning authority and certifies a land parcel\'s zoning classification — Residential, Commercial, Industrial, Agricultural, or another designated zone under the Development Plan.' },
+      { question: 'What is the difference between a Zone Certificate and a Property Card?', answer: 'A Zone Certificate confirms zoning classification for development purposes, while a Property Card (City Survey Extract) is the urban land record documenting ownership, area, and encumbrances — the urban equivalent of the 7/12 extract.' },
+      { question: 'When do I need a Zone Certificate vs a Property Card?', answer: 'You need a Zone Certificate before development permission, land-use change applications, or building permits. A Property Card is needed for property registration, bank loans, encumbrance searches, and survey work on urban land.' },
+    ],
   },
 }
 
@@ -196,7 +241,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: { canonical: `https://shubhamsurveyors.com/knowledge/${slug}` },
+    alternates: { canonical: `${SITE.url}/knowledge/${slug}` },
   }
 }
 
@@ -216,8 +261,37 @@ export default async function ArticlePage({ params }: Props) {
   const readingTime = article?.readingTime ?? fb?.readingTime ?? 5
   const publishedAt = fb?.publishedAt ?? (article?.publishedAt ? new Date(article.publishedAt).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }) : '')
 
+  const faqSchema = fb?.faqs && fb.faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: fb.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  } : null
+
+  const howToSchema = fb?.howTo ? {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: fb.howTo.name,
+    step: fb.howTo.steps.map((step, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  } : null
+
   return (
     <>
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
+      {howToSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      )}
+      <Breadcrumb items={[{ name: 'Knowledge', href: '/knowledge' }, { name: title, href: `/knowledge/${slug}` }]} />
       {/* Article hero */}
       <section
         className="pt-40 pb-16"
@@ -349,6 +423,48 @@ export default async function ArticlePage({ params }: Props) {
                 regulatory commitments.&rdquo;
               </blockquote>
             </RevealOnScroll>
+
+            {/* FAQ */}
+            {fb?.faqs && fb.faqs.length > 0 && (
+              <RevealOnScroll>
+                <div className="mt-12">
+                  <h2
+                    style={{
+                      fontFamily: 'var(--font-syne)',
+                      fontSize: '1.25rem',
+                      fontWeight: '700',
+                      textTransform: 'uppercase',
+                      color: 'var(--color-on-surface)',
+                      marginBottom: '1.5rem',
+                      borderBottom: '1px solid var(--color-outline-variant)',
+                      paddingBottom: '0.75rem',
+                    }}
+                  >
+                    § FAQ Frequently Asked Questions
+                  </h2>
+                  <div className="flex flex-col gap-6">
+                    {fb.faqs.map((faq) => (
+                      <div key={faq.question}>
+                        <h3
+                          style={{
+                            fontFamily: 'var(--font-syne)',
+                            fontSize: '0.95rem',
+                            fontWeight: '700',
+                            color: 'var(--color-on-surface)',
+                            marginBottom: '0.5rem',
+                          }}
+                        >
+                          {faq.question}
+                        </h3>
+                        <p style={{ fontFamily: 'var(--font-jost)', fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--color-on-surface-variant)' }}>
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </RevealOnScroll>
+            )}
           </div>
 
           {/* Sidebar */}

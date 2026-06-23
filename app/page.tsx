@@ -11,9 +11,9 @@ import Testimonials from '@/components/sections/Testimonials'
 import ContactSection from '@/components/sections/ContactSection'
 
 export const metadata: Metadata = {
-  title: 'Shubham Surveyors — Precision Land Surveying | India',
+  title: 'Land Surveyor India | DGPS & Total Station Surveys | Shubham Surveyors',
   description:
-    "India's most trusted precision land surveying firm since 1994. DGPS, Total Station, RERA compliant surveys across 29 states. Government certified.",
+    "India's most trusted land surveying firm since 1994. DGPS, Total Station, topographic, and RERA-compliant surveys across all India. Government certified.",
   alternates: { canonical: 'https://shubhamsurveyors.com' },
 }
 

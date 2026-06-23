@@ -28,13 +28,23 @@ const footerLinks = {
     { label: 'Contact Us', href: '/contact' },
     { label: 'Client Portal', href: '/portal' },
   ],
+  Locations: [
+    { label: 'Maharashtra', href: '/locations/maharashtra' },
+    { label: 'Karnataka', href: '/locations/karnataka' },
+    { label: 'Gujarat', href: '/locations/gujarat' },
+    { label: 'Delhi', href: '/locations/delhi' },
+    { label: 'Tamil Nadu', href: '/locations/tamil-nadu' },
+    { label: 'Telangana', href: '/locations/telangana' },
+    { label: 'Uttar Pradesh', href: '/locations/uttar-pradesh' },
+    { label: 'All Locations →', href: '/locations' },
+  ],
 }
 
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: 'var(--color-primary-container)', borderTop: '1px solid var(--color-outline)' }}>
       <div
-        className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 pt-20 pb-12"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 px-8 pt-20 pb-12"
         style={{ paddingLeft: 'clamp(1rem, 4vw, 4rem)', paddingRight: 'clamp(1rem, 4vw, 4rem)' }}
       >
         {/* Brand column */}

@@ -2,14 +2,20 @@ export const SITE = {
   name: 'Shubham Surveyors',
   tagline: 'Precision surveys. Proven results. Trusted by India since 1994.',
   phone: '+91 98506 77816',
+  phoneAlt: '+91 94225 44212',
   whatsappNumber: '919850677816',
   email: 'shubhamsurveyors12@gmail.com',
-  address: 'Pune, Maharashtra, India',
+  address: 'Forest Castle, Ambegaon Budruk, Pune, Maharashtra',
   founded: '1994',
   yearsActive: 30,
   projectsDelivered: 5000,
   statesCovered: 29,
   url: 'https://shubhamsurveyors.com',
+  sameAs: [
+    'https://www.justdial.com/Pune/Shubham-Surveyors-Near-Bhairavnath-Temple-Ambegaon-Budruk/020PXX20-XX20-141128182743-V7E4_BZDET',
+    'https://www.indiamart.com/shubham-surveyors/',
+    'https://share.google/JKLJvPtG0oYyN5k8y',
+  ],
 } as const
 
 export const NAV_LINKS = [
