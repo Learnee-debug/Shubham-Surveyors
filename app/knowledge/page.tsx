@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Knowledge Center — The Precision Library',
   description:
     'Expert resources on Indian land law, surveying technology, RERA compliance, Mojani process, and regulatory procedures.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/knowledge' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/knowledge' },
 }
 
 const fallbackArticles = [

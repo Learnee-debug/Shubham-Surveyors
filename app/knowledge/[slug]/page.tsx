@@ -196,7 +196,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: { canonical: `https://www.shubhamsurveyors.in/knowledge/${slug}` },
+    alternates: { canonical: `https://shubhamsurveyors.com/knowledge/${slug}` },
   }
 }
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Shubham Surveyors — Precision Land Surveying | India',
   description:
     "India's most trusted precision land surveying firm since 1994. DGPS, Total Station, RERA compliant surveys across 29 states. Government certified.",
-  alternates: { canonical: 'https://www.shubhamsurveyors.in' },
+  alternates: { canonical: 'https://shubhamsurveyors.com' },
 }
 
 export default function HomePage() {

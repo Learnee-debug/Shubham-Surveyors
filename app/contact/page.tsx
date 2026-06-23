@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description:
     'Contact Shubham Surveyors for precision land surveys. Offices in Pune, Maharashtra. All-India coverage. Response within 4 hours.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/contact' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/contact' },
 }
 
 export default function ContactPage() {

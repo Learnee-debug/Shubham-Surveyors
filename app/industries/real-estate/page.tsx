@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Real Estate & Township Survey Services',
   description:
     'RERA-compliant boundary demarcation, layout surveys, and carpet area certification for developers across India.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/industries/real-estate' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/industries/real-estate' },
 }
 
 export default function RealEstatePage() {

@@ -31,13 +31,16 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
-    default: 'Shubham Surveyors — Precision Land Surveying | India',
+    default: 'Shubham Surveyors — Land Surveyors in Pune, Maharashtra | India',
     template: '%s | Shubham Surveyors',
   },
   description:
-    "India's most trusted precision land surveying firm. 30+ years. DGPS, Total Station, AutoCAD. Government certified. RERA compliant. All India coverage.",
+    "Shubham Surveyors — trusted land surveyors in Pune since 1994. DGPS, Total Station, AutoCAD. Government certified. RERA compliant. All India coverage.",
   keywords: [
+    'land surveyors',
+    'land surveyors in Pune',
     'land surveyor India',
     'DGPS survey',
     'RTK survey',
@@ -57,9 +60,10 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Shubham Surveyors',
-  description: 'Precision land surveying firm with 30+ years experience',
+  description: 'Land surveyors based in Pune, Maharashtra, serving clients across India since 1994.',
   url: SITE.url,
   telephone: SITE.phone,
+  email: SITE.email,
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Pune',

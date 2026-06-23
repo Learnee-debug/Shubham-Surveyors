@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Industries We Serve',
   description:
     'Precision survey services for infrastructure, real estate, mining, agriculture, smart cities, and utilities across India.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/industries' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/industries' },
 }
 
 const icons = [

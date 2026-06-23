@@ -9,7 +9,7 @@ export const SITE = {
   yearsActive: 30,
   projectsDelivered: 5000,
   statesCovered: 29,
-  url: 'https://www.shubhamsurveyors.in',
+  url: 'https://shubhamsurveyors.com',
 } as const
 
 export const NAV_LINKS = [

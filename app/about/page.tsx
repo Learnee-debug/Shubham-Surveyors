@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Shubham Surveyors — 30+ years of precision land surveying in India. Government certified, RERA compliant, sub-centimeter accuracy.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/about' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/about' },
 }
 
 const milestones = [

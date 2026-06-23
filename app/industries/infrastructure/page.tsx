@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Infrastructure & Highway Survey Services',
   description:
     'NHAI, PWD and railway corridor surveys. Precision linear mapping, cross-sections, and profile leveling for India\'s critical infrastructure.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/industries/infrastructure' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/industries/infrastructure' },
 }
 
 export default function InfrastructurePage() {

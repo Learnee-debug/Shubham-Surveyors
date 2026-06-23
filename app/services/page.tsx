@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Precision Survey Services',
   description:
     'Boundary surveys, topographic mapping, RTK DGPS, infrastructure corridor surveys, Mojani/TILR, and GIS mapping across India.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/services' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/services' },
 }
 
 const icons = [

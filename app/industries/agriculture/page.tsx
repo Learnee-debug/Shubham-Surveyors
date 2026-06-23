@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Agriculture & Land Survey Services',
   description:
     'Precision land surveys for agricultural land demarcation, irrigation planning, soil surveys, and land consolidation in India.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/industries/agriculture' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/industries/agriculture' },
 }
 
 export default function AgriculturePage() {

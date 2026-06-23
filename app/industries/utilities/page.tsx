@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Oil, Gas & Utilities Survey Services',
   description:
     'Pipeline corridor mapping, Right-of-Way surveys, utility asset management, and transmission line surveys across India.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/industries/utilities' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/industries/utilities' },
 }
 
 export default function UtilitiesPage() {

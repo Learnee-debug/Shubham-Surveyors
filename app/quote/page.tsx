@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Get a Quote',
   description:
     'Instant survey cost estimate for land boundary, topographic, RTK DGPS, highway corridor, and GIS surveys across India.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/quote' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/quote' },
 }
 
 export default function QuotePage() {

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Smart Cities & Urban GIS Survey Services',
   description:
     'GIS base mapping, utility surveys, digital twin data, and smart city infrastructure surveys across India.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/industries/smart-cities' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/industries/smart-cities' },
 }
 
 export default function SmartCitiesPage() {

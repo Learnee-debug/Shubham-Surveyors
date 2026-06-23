@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Project Portfolio',
   description:
     '5,000+ precision survey projects delivered across 29 Indian states — highways, real estate, mining, and government infrastructure.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/projects' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/projects' },
 }
 
 const stats = [

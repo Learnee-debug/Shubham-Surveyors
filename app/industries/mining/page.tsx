@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Mining & Earthworks Volumetric Survey Services',
   description:
     'Volumetric measurements, stockpile analysis, lease boundary verification, and mine plan support for India\'s mineral sector.',
-  alternates: { canonical: 'https://www.shubhamsurveyors.in/industries/mining' },
+  alternates: { canonical: 'https://shubhamsurveyors.com/industries/mining' },
 }
 
 export default function MiningPage() {
