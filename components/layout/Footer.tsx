@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { SITE } from '@/lib/constants'
 
 const footerLinks = {
@@ -49,6 +50,13 @@ export default function Footer() {
       >
         {/* Brand column */}
         <div className="md:col-span-1">
+          <Image
+            src="/logo-mark-gold.png"
+            alt="Shubham Surveyors logo"
+            width={40}
+            height={40}
+            style={{ width: '40px', height: 'auto', marginBottom: '1rem' }}
+          />
           <div
             style={{
               fontFamily: 'var(--font-syne)',

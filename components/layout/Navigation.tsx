@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -88,25 +89,15 @@ export default function Navigation() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div
-              className="flex items-center justify-center flex-shrink-0"
-              style={{
-                width: '32px',
-                height: '32px',
-                backgroundColor: 'var(--color-brand-navy)',
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: 'var(--font-syne)',
-                  fontWeight: '900',
-                  fontSize: '18px',
-                  color: 'var(--color-brand-gold)',
-                }}
-              >
-                S
-              </span>
-            </div>
+            <Image
+              src="/logo-mark.png"
+              alt="Shubham Surveyors logo"
+              width={32}
+              height={32}
+              className="flex-shrink-0"
+              style={{ width: '32px', height: 'auto' }}
+              priority
+            />
             <div>
               <div
                 className="label-caps"
