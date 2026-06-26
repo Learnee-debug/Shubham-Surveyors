@@ -183,4 +183,34 @@ export const TESTIMONIALS = [
     role: 'Property Owner, Maharashtra',
     quote: 'Their court-admissible survey report was the key evidence that resolved our land boundary case. 30 years of expertise — you feel it in every deliverable.',
   },
+  {
+    initials: 'RP',
+    name: 'Rajesh P.',
+    role: 'Property Owner',
+    quote: 'Accurate measurements, timely delivery, and excellent support throughout the project.',
+  },
+  {
+    initials: 'AD',
+    name: 'Amit D.',
+    role: 'Civil Contractor',
+    quote: 'Professional team with outstanding surveying expertise. Highly recommended.',
+  },
+  {
+    initials: 'PK',
+    name: 'Priya K.',
+    role: 'Landowner',
+    quote: 'Fast, reliable, and precise. Made our land documentation process stress-free.',
+  },
+  {
+    initials: 'SJ',
+    name: 'Sandeep J.',
+    role: 'Builder & Developer',
+    quote: 'Detailed survey reports and great communication from start to finish.',
+  },
+  {
+    initials: 'VS',
+    name: 'Vikram S.',
+    role: 'Project Manager',
+    quote: "Exceptional service and accuracy. We'll definitely work with them again.",
+  },
 ] as const
