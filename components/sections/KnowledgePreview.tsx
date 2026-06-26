@@ -74,7 +74,7 @@ export default function KnowledgePreview() {
                   <Link
                     href={`/knowledge/${article.slug}`}
                     className="label-caps transition-colors duration-200"
-                    style={{ color: 'var(--color-brand-gold)' }}
+                    style={{ color: '#8B6508' }}
                   >
                     READ GUIDE →
                   </Link>

@@ -173,7 +173,7 @@ export default function IndustryPageTemplate({
               >
                 <div
                   className="label-caps"
-                  style={{ color: 'var(--color-brand-gold)', fontSize: '1.5rem', fontFamily: 'var(--font-syne)', fontWeight: '800' }}
+                  style={{ color: '#8B6508', fontSize: '1.5rem', fontFamily: 'var(--font-syne)', fontWeight: '800' }}
                 >
                   {step.num}
                 </div>
@@ -280,7 +280,7 @@ export default function IndustryPageTemplate({
                 className="p-7 flex flex-col gap-4"
                 style={{ border: '1px solid var(--color-outline)' }}
               >
-                <CheckCircle size={20} style={{ color: 'var(--color-brand-gold)' }} />
+                <CheckCircle size={20} style={{ color: '#8B6508' }} />
                 <h3 style={{ fontFamily: 'var(--font-syne)', fontSize: '1rem', fontWeight: '700', textTransform: 'uppercase', color: 'var(--color-on-surface)' }}>
                   {adv.title}
                 </h3>

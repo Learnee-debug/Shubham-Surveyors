@@ -34,6 +34,7 @@ export default function Testimonials() {
               >
                 {/* Decorative quote mark */}
                 <span
+                  aria-hidden="true"
                   style={{
                     fontFamily: 'var(--font-cormorant)',
                     fontSize: '80px',
@@ -51,7 +52,7 @@ export default function Testimonials() {
                 </span>
 
                 {/* Stars */}
-                <div className="label-caps mb-4" style={{ color: 'var(--color-brand-gold)' }}>
+                <div className="label-caps mb-4" style={{ color: '#8B6508' }}>
                   ★★★★★
                 </div>
 

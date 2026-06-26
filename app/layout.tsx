@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer'
 import CustomCursor from '@/components/layout/CustomCursor'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import Script from 'next/script'
-import { SITE } from '@/lib/constants'
+import { SITE, TESTIMONIALS } from '@/lib/constants'
 import { LOCATIONS } from '@/lib/locations'
 
 const syne = Syne({
@@ -125,6 +125,17 @@ const jsonLd = {
     ],
   },
   priceRange: '₹₹',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: String(TESTIMONIALS.length),
+  },
+  review: TESTIMONIALS.map((t) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewBody: t.quote,
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+  })),
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -126,7 +126,7 @@ export default function CostEstimator() {
 
         {/* Right: form */}
         <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-brand-slate)', padding: 'clamp(1.5rem, 4vw, 3rem)' }}>
-          <p className="label-caps mb-8" style={{ color: 'var(--color-brand-gold)' }}>
+          <p className="label-caps mb-8" style={{ color: '#8B6508' }}>
             SURVEY COST ESTIMATOR
           </p>
 

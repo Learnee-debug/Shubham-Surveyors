@@ -177,7 +177,7 @@ export default function ServicesPage() {
           <Link
             href="/locations"
             className="label-caps px-4 py-2"
-            style={{ border: '1px solid var(--color-brand-gold)', color: 'var(--color-brand-gold)' }}
+            style={{ border: '1px solid var(--color-brand-gold)', color: '#8B6508' }}
           >
             View All States →
           </Link>

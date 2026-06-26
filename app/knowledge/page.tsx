@@ -125,7 +125,7 @@ export default async function KnowledgePage() {
                       <Link
                         href={`/knowledge/${typeof featured.slug === 'string' ? featured.slug : (featured.slug as { current: string }).current}`}
                         className="label-caps"
-                        style={{ color: 'var(--color-brand-gold)' }}
+                        style={{ color: '#8B6508' }}
                       >
                         READ FULL REPORT →
                       </Link>

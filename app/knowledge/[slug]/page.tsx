@@ -302,7 +302,7 @@ export default async function ArticlePage({ params }: Props) {
           <p className="label-caps mb-4" style={{ color: 'var(--color-on-surface-variant)' }}>
             <Link href="/knowledge" style={{ color: 'inherit' }}>KNOWLEDGE CENTER</Link>
             {' '}/{' '}
-            <span style={{ color: 'var(--color-brand-gold)' }}>{badge}</span>
+            <span style={{ color: '#8B6508' }}>{badge}</span>
           </p>
           <h1
             style={{

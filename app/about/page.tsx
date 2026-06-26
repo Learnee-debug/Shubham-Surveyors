@@ -194,7 +194,7 @@ export default function AboutPage() {
               >
                 <div
                   className="label-caps flex-shrink-0 w-16"
-                  style={{ color: 'var(--color-brand-gold)', paddingTop: '2px' }}
+                  style={{ color: '#8B6508', paddingTop: '2px' }}
                 >
                   {m.year}
                 </div>
