@@ -27,6 +27,7 @@ export default function UtilitiesPage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-06"
+      slug="utilities"
       sector="Oil, Gas & Utilities"
       headline="PRECISION FOR CRITICAL INFRASTRUCTURE."
       intro="Oil, gas, and utility infrastructure cannot tolerate positional errors. Our surveys provide the spatial certainty required for pipeline routing, Right-of-Way acquisition, and long-term asset management."

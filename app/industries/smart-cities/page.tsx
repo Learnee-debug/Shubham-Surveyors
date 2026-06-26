@@ -27,6 +27,7 @@ export default function SmartCitiesPage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-05"
+      slug="smart-cities"
       sector="Smart Cities & Urban Planning"
       headline="THE DIGITAL TWIN OF THE REAL CITY."
       intro="Smart city infrastructure demands survey-grade spatial accuracy. From utility corridor mapping to digital twin base data, we provide the foundational geospatial intelligence for India's urban future."

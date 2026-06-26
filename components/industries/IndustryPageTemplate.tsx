@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SectionLabel from '@/components/ui/SectionLabel'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 import { CheckCircle, ArrowRight } from 'lucide-react'
 import { SITE } from '@/lib/constants'
 
@@ -18,6 +19,7 @@ interface Deliverable {
 
 interface IndustryPageTemplateProps {
   index: string
+  slug: string
   sector: string
   headline: string
   intro: string
@@ -32,6 +34,7 @@ interface IndustryPageTemplateProps {
 
 export default function IndustryPageTemplate({
   index,
+  slug,
   sector,
   headline,
   intro,
@@ -45,6 +48,7 @@ export default function IndustryPageTemplate({
 }: IndustryPageTemplateProps) {
   return (
     <>
+      <Breadcrumb items={[{ name: 'Industries', href: '/industries' }, { name: sector, href: `/industries/${slug}` }]} />
       {/* Hero */}
       <section
         className="pt-40 pb-20 relative overflow-hidden"
@@ -52,6 +56,7 @@ export default function IndustryPageTemplate({
       >
         <div className="bg-blueprint-dark absolute inset-0 opacity-40 pointer-events-none" />
         <div
+          aria-hidden="true"
           className="absolute top-8 right-8 label-caps hidden md:block"
           style={{ color: 'var(--color-brand-slate)', opacity: 0.6 }}
         >

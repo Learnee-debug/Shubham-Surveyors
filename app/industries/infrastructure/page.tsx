@@ -27,6 +27,7 @@ export default function InfrastructurePage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-01"
+      slug="infrastructure"
       sector="Infrastructure & Highways"
       headline="MAPPING INDIA'S MODERN FOUNDATIONS."
       intro="Delivering sub-centimeter topographical precision for the nation's most critical highway corridors, railway alignments, and structural marvels. Engineering truth, codified."

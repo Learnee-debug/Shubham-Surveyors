@@ -27,6 +27,7 @@ export default function AgriculturePage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-04"
+      slug="agriculture"
       sector="Agriculture & Land"
       headline="PRECISION FOR EVERY ACRE."
       intro="Agricultural land surveys require the same precision as any engineering project — water follows terrain, boundary disputes destroy livelihoods, and crop planning depends on accurate contour data."

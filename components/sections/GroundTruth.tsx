@@ -93,7 +93,7 @@ export default function GroundTruth() {
           <RevealOnScroll delay={0.25}>
             <p
               className="label-caps mt-8"
-              style={{ color: 'var(--color-brand-slate)' }}
+              style={{ color: '#9BA3B8' }}
             >
               — Shubham Surveyors · Quality Position
             </p>

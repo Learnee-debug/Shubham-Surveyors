@@ -56,6 +56,7 @@ export default function Hero() {
 
       {/* Coordinates overlay */}
       <div
+        aria-hidden="true"
         className="absolute bottom-8 right-8 label-caps hidden md:block"
         style={{ color: 'var(--color-brand-slate)', opacity: 0.6, lineHeight: '1.6' }}
       >
@@ -65,6 +66,7 @@ export default function Hero() {
 
       {/* Rotated coordinates */}
       <div
+        aria-hidden="true"
         className="absolute right-10 top-1/3 label-caps hidden md:block"
         style={{
           color: 'var(--color-brand-slate)',
@@ -174,7 +176,7 @@ export default function Hero() {
               >
                 <AnimatedCounter target={target} suffix={suffix} />
               </div>
-              <div className="label-caps" style={{ color: 'var(--color-brand-slate)' }}>
+              <div className="label-caps" style={{ color: '#9BA3B8' }}>
                 {label}
               </div>
             </div>

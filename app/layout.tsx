@@ -90,6 +90,7 @@ const jsonLd = {
   name: SITE.name,
   description: 'Land surveyors based in Pune, Maharashtra, serving clients across India since 1994. DGPS, Total Station, AutoCAD. Government certified.',
   image: `${SITE.url}/icon.png`,
+  logo: `${SITE.url}/icon.png`,
   url: SITE.url,
   telephone: SITE.phone,
   email: SITE.email,
@@ -126,14 +127,6 @@ const jsonLd = {
   priceRange: '₹₹',
 }
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
-  ],
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -145,11 +138,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Script
-          id="breadcrumb-json-ld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
         <CustomCursor />
         <Navigation />

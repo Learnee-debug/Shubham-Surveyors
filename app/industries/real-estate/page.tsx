@@ -27,6 +27,7 @@ export default function RealEstatePage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-02"
+      slug="real-estate"
       sector="Real Estate & Township Development"
       headline="THE GEOMETRY OF VALUE."
       intro="In real estate, millimeters translate to marketable square footage. Our dual-frequency RTK GNSS and robotic total stations eliminate spatial ambiguity, ensuring legal boundaries and carpet areas are documented with unimpeachable accuracy."

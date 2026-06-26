@@ -27,6 +27,7 @@ export default function MiningPage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-03"
+      slug="mining"
       sector="Mining & Earthworks"
       headline="MINING & EARTHWORKS VOLUMETRIC PRECISION."
       intro="Delivering absolute geometric control for India's mineral and extraction sectors. Rigorous data capture for resource management and regulatory compliance."

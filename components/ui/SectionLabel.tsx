@@ -13,7 +13,7 @@ export default function SectionLabel({ index, label, dark = false }: SectionLabe
       >
         {index}
       </span>
-      <span className="label-caps" style={{ color: 'var(--color-brand-gold)', paddingTop: '0.5rem' }}>
+      <span className="label-caps" style={{ color: dark ? 'var(--color-brand-gold)' : '#8B6508', paddingTop: '0.5rem' }}>
         {label}
       </span>
     </div>
