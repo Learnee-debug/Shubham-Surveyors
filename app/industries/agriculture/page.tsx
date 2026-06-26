@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import IndustryPageTemplate from '@/components/industries/IndustryPageTemplate'
+import { SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Agriculture & Land Survey Services',
@@ -8,8 +9,22 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://shubhamsurveyors.com/industries/agriculture' },
 }
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Agriculture & Land Survey Services',
+  serviceType: 'Agricultural Land Survey',
+  description:
+    'Precision land surveys for agricultural land demarcation, irrigation planning, soil surveys, and land consolidation in India.',
+  provider: { '@type': 'ProfessionalService', name: SITE.name, url: SITE.url },
+  areaServed: { '@type': 'Country', name: 'India' },
+  url: `${SITE.url}/industries/agriculture`,
+}
+
 export default function AgriculturePage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-04"
       sector="Agriculture & Land"
@@ -42,5 +57,6 @@ export default function AgriculturePage() {
       statValue="7/12"
       statLabel="EXTRACT COMPLIANT SURVEYS"
     />
+    </>
   )
 }

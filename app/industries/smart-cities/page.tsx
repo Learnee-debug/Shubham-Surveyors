@@ -1,15 +1,30 @@
 import type { Metadata } from 'next'
 import IndustryPageTemplate from '@/components/industries/IndustryPageTemplate'
+import { SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Smart Cities & Urban GIS Survey Services',
+  title: 'Smart Cities & Urban GIS Survey',
   description:
     'GIS base mapping, utility surveys, digital twin data, and smart city infrastructure surveys across India.',
   alternates: { canonical: 'https://shubhamsurveyors.com/industries/smart-cities' },
 }
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Smart Cities & Urban GIS Survey Services',
+  serviceType: 'Urban GIS Survey',
+  description:
+    'GIS base mapping, utility surveys, digital twin data, and smart city infrastructure surveys across India.',
+  provider: { '@type': 'ProfessionalService', name: SITE.name, url: SITE.url },
+  areaServed: { '@type': 'Country', name: 'India' },
+  url: `${SITE.url}/industries/smart-cities`,
+}
+
 export default function SmartCitiesPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-05"
       sector="Smart Cities & Urban Planning"
@@ -42,5 +57,6 @@ export default function SmartCitiesPage() {
       statValue="1cm"
       statLabel="GIS DATA ACCURACY"
     />
+    </>
   )
 }

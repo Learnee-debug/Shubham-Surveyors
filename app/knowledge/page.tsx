@@ -5,7 +5,7 @@ import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import { getAllArticles } from '@/lib/sanity/queries'
 
 export const metadata: Metadata = {
-  title: 'Knowledge Center — The Precision Library',
+  title: 'Land Survey Knowledge Center',
   description:
     'Expert resources on Indian land law, surveying technology, RERA compliance, Mojani process, and regulatory procedures.',
   alternates: { canonical: 'https://shubhamsurveyors.com/knowledge' },

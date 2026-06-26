@@ -1,15 +1,30 @@
 import type { Metadata } from 'next'
 import IndustryPageTemplate from '@/components/industries/IndustryPageTemplate'
+import { SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Real Estate & Township Survey Services',
+  title: 'Real Estate & RERA Survey Services',
   description:
     'RERA-compliant boundary demarcation, layout surveys, and carpet area certification for developers across India.',
   alternates: { canonical: 'https://shubhamsurveyors.com/industries/real-estate' },
 }
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Real Estate & Township Survey Services',
+  serviceType: 'RERA & Real Estate Survey',
+  description:
+    'RERA-compliant boundary demarcation, layout surveys, and carpet area certification for developers across India.',
+  provider: { '@type': 'ProfessionalService', name: SITE.name, url: SITE.url },
+  areaServed: { '@type': 'Country', name: 'India' },
+  url: `${SITE.url}/industries/real-estate`,
+}
+
 export default function RealEstatePage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-02"
       sector="Real Estate & Township Development"
@@ -42,5 +57,6 @@ export default function RealEstatePage() {
       statValue="±2MM"
       statLabel="CARPET AREA PRECISION"
     />
+    </>
   )
 }

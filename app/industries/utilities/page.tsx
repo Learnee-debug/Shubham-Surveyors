@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import IndustryPageTemplate from '@/components/industries/IndustryPageTemplate'
+import { SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Oil, Gas & Utilities Survey Services',
@@ -8,8 +9,22 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://shubhamsurveyors.com/industries/utilities' },
 }
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Oil, Gas & Utilities Survey Services',
+  serviceType: 'Pipeline & Utility Survey',
+  description:
+    'Pipeline corridor mapping, Right-of-Way surveys, utility asset management, and transmission line surveys across India.',
+  provider: { '@type': 'ProfessionalService', name: SITE.name, url: SITE.url },
+  areaServed: { '@type': 'Country', name: 'India' },
+  url: `${SITE.url}/industries/utilities`,
+}
+
 export default function UtilitiesPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-06"
       sector="Oil, Gas & Utilities"
@@ -42,5 +57,6 @@ export default function UtilitiesPage() {
       statValue="500+"
       statLabel="KM PIPELINE CORRIDORS SURVEYED"
     />
+    </>
   )
 }

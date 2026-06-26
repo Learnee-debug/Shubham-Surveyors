@@ -1,15 +1,30 @@
 import type { Metadata } from 'next'
 import IndustryPageTemplate from '@/components/industries/IndustryPageTemplate'
+import { SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Infrastructure & Highway Survey Services',
+  title: 'Infrastructure & Highway Survey',
   description:
     'NHAI, PWD and railway corridor surveys. Precision linear mapping, cross-sections, and profile leveling for India\'s critical infrastructure.',
   alternates: { canonical: 'https://shubhamsurveyors.com/industries/infrastructure' },
 }
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Infrastructure & Highway Survey Services',
+  serviceType: 'Highway & Infrastructure Survey',
+  description:
+    'NHAI, PWD and railway corridor surveys. Precision linear mapping, cross-sections, and profile leveling for India\'s critical infrastructure.',
+  provider: { '@type': 'ProfessionalService', name: SITE.name, url: SITE.url },
+  areaServed: { '@type': 'Country', name: 'India' },
+  url: `${SITE.url}/industries/infrastructure`,
+}
+
 export default function InfrastructurePage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-01"
       sector="Infrastructure & Highways"
@@ -42,5 +57,6 @@ export default function InfrastructurePage() {
       statValue="1,200+"
       statLabel="KM OF HIGHWAYS MAPPED"
     />
+    </>
   )
 }

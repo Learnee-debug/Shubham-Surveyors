@@ -6,6 +6,7 @@ import { Lock } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Client Portal',
   description: 'Secure client login for Shubham Surveyors project tracking and document access.',
+  robots: { index: false, follow: false },
 }
 
 export default function PortalPage() {

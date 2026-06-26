@@ -1,15 +1,30 @@
 import type { Metadata } from 'next'
 import IndustryPageTemplate from '@/components/industries/IndustryPageTemplate'
+import { SITE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Mining & Earthworks Volumetric Survey Services',
+  title: 'Mining & Earthworks Survey Services',
   description:
     'Volumetric measurements, stockpile analysis, lease boundary verification, and mine plan support for India\'s mineral sector.',
   alternates: { canonical: 'https://shubhamsurveyors.com/industries/mining' },
 }
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Mining & Earthworks Volumetric Survey Services',
+  serviceType: 'Mining Volumetric Survey',
+  description:
+    'Volumetric measurements, stockpile analysis, lease boundary verification, and mine plan support for India\'s mineral sector.',
+  provider: { '@type': 'ProfessionalService', name: SITE.name, url: SITE.url },
+  areaServed: { '@type': 'Country', name: 'India' },
+  url: `${SITE.url}/industries/mining`,
+}
+
 export default function MiningPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     <IndustryPageTemplate
       index="§ IND-03"
       sector="Mining & Earthworks"
@@ -42,5 +57,6 @@ export default function MiningPage() {
       statValue="±0.001"
       statLabel="MM PRECISION STANDARD"
     />
+    </>
   )
 }

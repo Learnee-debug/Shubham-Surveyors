@@ -8,7 +8,7 @@ import { SITE } from '@/lib/constants'
 import { MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Land Survey Services Across India | All States',
+  title: 'Land Survey Services Across India',
   description:
     'Professional DGPS, Total Station, and boundary surveys in 20+ Indian states. 30+ years experience. Government certified. Contact us for any location.',
   alternates: { canonical: `${SITE.url}/locations` },

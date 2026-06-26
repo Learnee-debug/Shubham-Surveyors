@@ -22,7 +22,7 @@ const fallbackArticles: Record<string, {
   howTo?: { name: string; steps: Array<{ name: string; text: string }> }
 }> = {
   'mojani-process': {
-    title: 'The Mojani Process in Maharashtra: A Complete Technical Guide',
+    title: 'The Mojani Process in Maharashtra',
     topicBadge: 'MAHARASHTRA · TILR',
     description: 'An authoritative overview of the official land measurement (Mojani) process in Maharashtra.',
     readingTime: 12,
@@ -80,7 +80,7 @@ const fallbackArticles: Record<string, {
     },
   },
   'rera-requirements': {
-    title: 'RERA Compliance & Precision Surveying',
+    title: 'RERA Compliance & Survey Requirements',
     topicBadge: 'RERA · REAL ESTATE',
     description: 'A definitive breakdown explaining why ground-based precision is mandatory for RERA-compliant layout plans, accurate carpet area verification, and indisputable final area certifications.',
     readingTime: 8,
@@ -118,7 +118,7 @@ const fallbackArticles: Record<string, {
     ],
   },
   'boundary-disputes': {
-    title: 'How to Resolve a Land Boundary Dispute in India',
+    title: 'Resolving Land Boundary Disputes',
     topicBadge: 'LAND RECORDS · LEGAL',
     description: 'A complete legal and technical guide to resolving boundary disputes in India — from initial documentation through to court-admissible survey evidence.',
     readingTime: 10,
@@ -148,7 +148,7 @@ const fallbackArticles: Record<string, {
     ],
   },
   '712-extract': {
-    title: '7/12 Extract: What It Is and How to Get It',
+    title: '7/12 Extract: What It Is & How to Get It',
     topicBadge: 'MAHARASHTRA · LAND RECORDS',
     description: 'Complete guide to the 7/12 extract — the foundational land record document for all agricultural and revenue land in Maharashtra.',
     readingTime: 6,

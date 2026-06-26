@@ -39,8 +39,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'Land Surveyor India | DGPS & Total Station Surveys | Shubham Surveyors',
-    template: '%s | Shubham Surveyors — Land Surveying India',
+    default: 'Land Surveyor India | DGPS & Total Station',
+    template: '%s | Shubham Surveyors',
   },
   description:
     "India's most trusted land surveying firm with 30+ years experience. DGPS surveys, Total Station, topographic surveys, RERA-compliant layouts. Government certified. Serving all India.",
