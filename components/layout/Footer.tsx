@@ -60,12 +60,13 @@ export default function Footer() {
           <div
             style={{
               fontFamily: 'var(--font-syne)',
-              fontSize: '28px',
+              fontSize: 'clamp(1.15rem, 1.7vw, 1.75rem)',
               fontWeight: '800',
               textTransform: 'uppercase',
               color: 'var(--color-inverse-on-surface)',
               lineHeight: '1.1',
               marginBottom: '1rem',
+              whiteSpace: 'nowrap',
             }}
           >
             SHUBHAM<br />SURVEYORS
@@ -142,14 +143,18 @@ export default function Footer() {
           © 2024 SHUBHAM SURVEYORS | PRECISION ± 0.001MM | EST. 1994
         </p>
         <div className="flex gap-6">
-          {['Privacy Policy', 'Terms of Service', 'Sitemap'].map((item) => (
+          {[
+            { label: 'Privacy Policy', href: '/privacy-policy' },
+            { label: 'Terms of Service', href: '/terms-of-service' },
+            { label: 'Sitemap', href: '/sitemap.xml' },
+          ].map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase().replace(/ /g, '-')}`}
+              key={item.href}
+              href={item.href}
               className="label-caps transition-colors duration-200"
               style={{ color: 'var(--color-on-primary-container)', opacity: 0.6 }}
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </div>
