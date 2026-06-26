@@ -30,6 +30,7 @@ const footerLinks = {
     { label: 'Client Portal', href: '/portal' },
   ],
   Locations: [
+    { label: 'Pune (HQ)', href: '/land-surveyors-pune' },
     { label: 'Maharashtra', href: '/locations/maharashtra' },
     { label: 'Karnataka', href: '/locations/karnataka' },
     { label: 'Gujarat', href: '/locations/gujarat' },

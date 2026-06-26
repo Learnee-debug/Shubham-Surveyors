@@ -92,18 +92,24 @@ export default function LocationPageTemplate({ location, index }: LocationPageTe
           </h2>
         </RevealOnScroll>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {cities.map((city, i) => (
-            <RevealOnScroll key={city} delay={i * 0.05}>
+          {cities.map((city, i) => {
+            const isPuneHQ = location.state === 'maharashtra' && city === 'Pune'
+            const cardContent = (
               <div className="p-6" style={{ border: '1px solid var(--color-outline)' }}>
                 <div className="label-caps mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>
-                  SURVEY SERVICES
+                  {isPuneHQ ? 'HEADQUARTERS' : 'SURVEY SERVICES'}
                 </div>
                 <div style={{ fontFamily: 'var(--font-syne)', fontSize: '1.1rem', fontWeight: '700', textTransform: 'uppercase', color: 'var(--color-on-surface)' }}>
                   {city}
                 </div>
               </div>
-            </RevealOnScroll>
-          ))}
+            )
+            return (
+              <RevealOnScroll key={city} delay={i * 0.05}>
+                {isPuneHQ ? <Link href="/land-surveyors-pune">{cardContent}</Link> : cardContent}
+              </RevealOnScroll>
+            )
+          })}
         </div>
       </section>
 

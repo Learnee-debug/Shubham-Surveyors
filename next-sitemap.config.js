@@ -9,6 +9,7 @@ module.exports = {
   transform: async (config, path) => {
     let priority = config.priority
     if (path === '/') priority = 1.0
+    else if (path === '/land-surveyors-pune') priority = 0.95
     else if (['/services', '/quote', '/contact', '/locations', '/industries'].includes(path)) priority = 0.9
     else if (path.startsWith('/locations/')) priority = 0.85
     else if (path.startsWith('/industries/')) priority = 0.8
