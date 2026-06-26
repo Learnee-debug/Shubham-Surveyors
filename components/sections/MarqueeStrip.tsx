@@ -32,7 +32,7 @@ export default function MarqueeStrip() {
             className="inline-flex items-center mx-6"
             style={{ gap: '1.5rem' }}
           >
-            <span className="label-caps" style={{ color: 'var(--color-brand-slate)', letterSpacing: '0.15em' }}>
+            <span className="label-caps" style={{ color: '#9BA3B8', letterSpacing: '0.15em' }}>
               {text}
             </span>
             <span className="label-caps" style={{ color: 'var(--color-brand-gold)' }}>•</span>

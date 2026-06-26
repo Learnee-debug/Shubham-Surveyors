@@ -89,6 +89,7 @@ const jsonLd = {
   '@id': `${SITE.url}/#organization`,
   name: SITE.name,
   description: 'Land surveyors based in Pune, Maharashtra, serving clients across India since 1994. DGPS, Total Station, AutoCAD. Government certified.',
+  image: `${SITE.url}/icon.png`,
   url: SITE.url,
   telephone: SITE.phone,
   email: SITE.email,

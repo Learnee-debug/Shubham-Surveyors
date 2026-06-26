@@ -133,10 +133,10 @@ export default function CostEstimator() {
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-7">
             {/* Survey type */}
             <div>
-              <label className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>
+              <label htmlFor="surveyType" className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>
                 SURVEY TYPE
               </label>
-              <select {...register('surveyType')} className="input-underline">
+              <select id="surveyType" {...register('surveyType')} className="input-underline">
                 <option value="">Select type</option>
                 <option value="boundary">Boundary Survey</option>
                 <option value="total_station">Total Station</option>
@@ -150,10 +150,11 @@ export default function CostEstimator() {
 
             {/* Area */}
             <div>
-              <label className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>
+              <label htmlFor="area" className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>
                 {areaLabel}
               </label>
               <input
+                id="area"
                 type="number"
                 step="0.01"
                 min="0"
@@ -166,10 +167,10 @@ export default function CostEstimator() {
 
             {/* Terrain */}
             <div>
-              <label className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>
+              <label htmlFor="terrain" className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>
                 TERRAIN
               </label>
-              <select {...register('terrain')} className="input-underline">
+              <select id="terrain" {...register('terrain')} className="input-underline">
                 <option value="">Select terrain</option>
                 <option value="flat">Flat (×1.0)</option>
                 <option value="urban">Urban / Semi-Urban (×1.2)</option>
@@ -181,13 +182,13 @@ export default function CostEstimator() {
             {/* Name + Phone */}
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <label className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>NAME</label>
-                <input {...register('name')} placeholder="Full Name" className="input-underline" />
+                <label htmlFor="name" className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>NAME</label>
+                <input id="name" {...register('name')} placeholder="Full Name" className="input-underline" />
                 {errors.name && <p className="label-caps mt-1" style={{ color: '#ef4444', fontSize: '10px' }}>{errors.name.message}</p>}
               </div>
               <div>
-                <label className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>PHONE</label>
-                <input {...register('phone')} type="tel" placeholder="+91 XXXXX" className="input-underline" />
+                <label htmlFor="phone" className="label-caps block mb-2" style={{ color: 'var(--color-on-surface-variant)' }}>PHONE</label>
+                <input id="phone" {...register('phone')} type="tel" placeholder="+91 XXXXX" className="input-underline" />
                 {errors.phone && <p className="label-caps mt-1" style={{ color: '#ef4444', fontSize: '10px' }}>{errors.phone.message}</p>}
               </div>
             </div>

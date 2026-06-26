@@ -60,7 +60,7 @@ export default function Navigation() {
           <a
             href={`tel:${SITE.phone.replace(/\s/g, '')}`}
             className="flex items-center gap-1.5 label-caps transition-opacity duration-200 hover:opacity-80"
-            style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
+            style={{ color: 'var(--color-brand-gold)', fontSize: '11px', minHeight: '24px', padding: '4px 2px' }}
           >
             <Phone size={12} className="flex-shrink-0" />
             {SITE.phone}
@@ -68,7 +68,7 @@ export default function Navigation() {
           <a
             href={`tel:${SITE.phoneAlt.replace(/\s/g, '')}`}
             className="hidden sm:flex items-center gap-1.5 label-caps transition-opacity duration-200 hover:opacity-80"
-            style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
+            style={{ color: 'var(--color-brand-gold)', fontSize: '11px', minHeight: '24px', padding: '4px 2px' }}
           >
             <Phone size={12} className="flex-shrink-0" />
             {SITE.phoneAlt}
@@ -76,7 +76,7 @@ export default function Navigation() {
           <a
             href={`mailto:${SITE.email}`}
             className="flex items-center gap-1.5 label-caps transition-opacity duration-200 hover:opacity-80"
-            style={{ color: 'var(--color-brand-gold)', fontSize: '11px' }}
+            style={{ color: 'var(--color-brand-gold)', fontSize: '11px', minHeight: '24px', padding: '4px 2px' }}
           >
             <Mail size={12} className="flex-shrink-0" />
             {SITE.email}

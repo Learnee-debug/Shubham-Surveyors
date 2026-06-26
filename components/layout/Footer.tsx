@@ -139,7 +139,7 @@ export default function Footer() {
           paddingRight: 'clamp(1rem, 4vw, 4rem)',
         }}
       >
-        <p className="label-caps" style={{ color: 'var(--color-on-primary-container)', opacity: 0.6 }}>
+        <p className="label-caps" style={{ color: '#A0AEC0' }}>
           © 2024 SHUBHAM SURVEYORS | PRECISION ± 0.001MM | EST. 1994
         </p>
         <div className="flex gap-6">
@@ -152,7 +152,7 @@ export default function Footer() {
               key={item.href}
               href={item.href}
               className="label-caps transition-colors duration-200"
-              style={{ color: 'var(--color-on-primary-container)', opacity: 0.6 }}
+              style={{ color: '#A0AEC0' }}
             >
               {item.label}
             </Link>
