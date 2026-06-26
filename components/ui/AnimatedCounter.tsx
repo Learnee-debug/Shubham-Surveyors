@@ -26,10 +26,15 @@ export default function AnimatedCounter({
     started.current = true
 
     const start = performance.now()
+    let last = -1
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.round(eased * target))
+      const next = Math.round(eased * target)
+      if (next !== last) {
+        last = next
+        setCount(next)
+      }
       if (progress < 1) requestAnimationFrame(tick)
     }
     requestAnimationFrame(tick)
