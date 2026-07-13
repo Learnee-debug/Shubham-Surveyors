@@ -85,6 +85,7 @@ export default function ContactSection() {
               { icon: <Phone size={18} />, text: SITE.phone },
               { icon: <Mail size={18} />, text: SITE.email },
               { icon: <MapPin size={18} />, text: SITE.address },
+              { icon: <MapPin size={18} />, text: SITE.addressLonavala },
             ].map(({ icon, text }) => (
               <div
                 key={text}
