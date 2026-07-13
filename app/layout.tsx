@@ -97,11 +97,38 @@ const jsonLd = {
   foundingDate: SITE.founded,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Forest Castle, Ambegaon Budruk',
+    streetAddress: 'B 1 Wing, Flat No. 211, Forest Castle, Vetal Nagar, Ambegaon (Bk)',
     addressLocality: 'Pune',
     addressRegion: 'Maharashtra',
+    postalCode: '411046',
     addressCountry: 'IN',
   },
+  location: [
+    {
+      '@type': 'Place',
+      name: 'Shubham Surveyors — Pune (HQ)',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'B 1 Wing, Flat No. 211, Forest Castle, Vetal Nagar, Ambegaon (Bk)',
+        addressLocality: 'Pune',
+        addressRegion: 'Maharashtra',
+        postalCode: '411046',
+        addressCountry: 'IN',
+      },
+    },
+    {
+      '@type': 'Place',
+      name: 'Shubham Surveyors — Lonavala',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Shop.13,14,15, Municipal Complex, Siddharth Nagar',
+        addressLocality: 'Lonavala',
+        addressRegion: 'Maharashtra',
+        postalCode: '410401',
+        addressCountry: 'IN',
+      },
+    },
+  ],
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 18.5204,

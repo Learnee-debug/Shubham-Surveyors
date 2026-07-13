@@ -56,9 +56,10 @@ const serviceJsonLd = {
   telephone: SITE.phone,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Forest Castle, Ambegaon Budruk',
+    streetAddress: 'B 1 Wing, Flat No. 211, Forest Castle, Vetal Nagar, Ambegaon (Bk)',
     addressLocality: 'Pune',
     addressRegion: 'Maharashtra',
+    postalCode: '411046',
     addressCountry: 'IN',
   },
   areaServed: { '@type': 'City', name: 'Pune' },
@@ -107,8 +108,8 @@ export default function LandSurveyorsPunePage() {
               marginBottom: '2rem',
             }}
           >
-            Based at Forest Castle, Ambegaon Budruk — serving PMC, PCMC, and the NHAI NH-48
-            corridor since 1994. RTK DGPS, boundary, and RERA-compliant surveys with site
+            Based at Forest Castle, Vetal Nagar, Ambegaon (Bk), Pune — serving PMC, PCMC, and the
+            NHAI NH-48 corridor since 1994. RTK DGPS, boundary, and RERA-compliant surveys with site
             visits arranged within 48 hours anywhere in Pune.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -134,7 +135,7 @@ export default function LandSurveyorsPunePage() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { icon: <MapPin size={20} />, title: 'Forest Castle, Ambegaon Budruk', desc: 'Our office and field team are based in Pune — not a remote contractor.' },
+            { icon: <MapPin size={20} />, title: 'B 1 Wing, Forest Castle, Vetal Nagar, Ambegaon (Bk), Pune 411046', desc: 'Our main office and field team are headquartered in Pune.' },
             { icon: <Clock size={20} />, title: '48-Hour Site Visits', desc: 'Site visits anywhere in Pune, PCMC, or surrounding talukas within 48 hours.' },
             { icon: <ShieldCheck size={20} />, title: 'PMC & PCMC Accepted', desc: 'Reports formatted to Pune Municipal Corporation and PCMC requirements.' },
           ].map((item) => (

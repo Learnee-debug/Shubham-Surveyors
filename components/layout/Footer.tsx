@@ -31,6 +31,7 @@ const footerLinks = {
   ],
   Locations: [
     { label: 'Pune (HQ)', href: '/land-surveyors-pune' },
+    { label: 'Lonavala', href: '/locations/maharashtra' },
     { label: 'Maharashtra', href: '/locations/maharashtra' },
     { label: 'Karnataka', href: '/locations/karnataka' },
     { label: 'Gujarat', href: '/locations/gujarat' },
